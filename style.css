@@ -1,0 +1,89 @@
+/** style.css
+ *
+Theme Name:		American Elections
+Theme URI:		http://www.swarthmore.edu
+Description:	A WordPress Theme created for The American Elections course at Swarthmore College
+Author:			Michael C Kappeler
+Author URI:		
+Version:		1.0
+
+License:		GNU General Public License v3.0
+License URI:	http://www.gnu.org/licenses/gpl-3.0.html
+
+
+    Copyright (C) 2012  Konstantin Obenland <konstantin@obenland.it>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+header,nav,article,footer,section,aside,figure,figcaption{display:block;}
+
+body {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+}
+
+header h1{
+	font-size: 60px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin:0px;
+	padding:0px;
+	line-height:normal;
+	color: #08C;
+}
+
+header h2{
+	font-size: 18px;
+	color:#B7252B;
+	line-height:normal;
+	margin:0px 0px 10px;
+	padding:0px;
+}
+footer p {
+	font-size:11px;
+	margin:20px 0px;
+	}
+	
+	
+.modal {
+	/*-- position:absolute;--*/
+	z-index:1050;
+	overflow:hidden;
+}
+.modal-body {
+	position:relative;
+	width:94%;
+}
+.layer-options .lead {
+	margin-left:5px;
+	margin-bottom:0px;
+}
+.layer-options-form {
+	margin-left:15px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.no-layer-label {
+	font-weight:bold;
+}
+.well {
+	padding:5px;
+	margin-bottom:5px;
+}
+.well p {
+	margin: 0px 0px 0px 5px;
+	}
