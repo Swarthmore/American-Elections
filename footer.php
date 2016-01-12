@@ -21,14 +21,14 @@
 <?php wp_footer(); ?>
 
  <script type="text/javascript">
- 	$(function() {
-		$.preload( 'wp-content/themes/american-elections/img/Map_of_USA_Absentee.png',
-          'wp-content/themes/american-elections/img/Map_of_USA_EarlyVoting.png',
-          'wp-content/themes/american-elections/img/Map_of_USA_GroupsRegistered.png',
-		  'wp-content/themes/american-elections/img/Map_of_USA_HighSchool.png',
-          'wp-content/themes/american-elections/img/Map_of_USA_VoterID.png',
-		  'wp-content/themes/american-elections/img/USA-2008-swingstates.png',
-		  'wp-content/themes/american-elections/img/USA-2004-swingstates.png'
+ 	jQuery(function() {
+		jQuery.preload( '<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_Absentee.png'; ?>',
+          '<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_EarlyVoting.png'; ?>',
+          '<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_GroupsRegistered.png'; ?>',
+		  '<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_HighSchool.png'?>',
+          '<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_VoterID.png' ?>',
+		  '<?php echo get_stylesheet_directory_uri() . '/img/USA-2008-swingstates.png'?>',
+		  '<?php echo get_stylesheet_directory_uri() . '/img/USA-2004-swingstates.png'?>'
         );
 		});
  </script>
