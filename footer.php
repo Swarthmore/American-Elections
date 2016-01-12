@@ -19,7 +19,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
- <script type="text/javascript" src="wp-content/themes/american-elections/js/jquery.preload.min.js"></script>
+
  <script type="text/javascript">
  	$(function() {
 		$.preload( 'wp-content/themes/american-elections/img/Map_of_USA_Absentee.png',
