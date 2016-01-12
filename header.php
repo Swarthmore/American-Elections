@@ -104,20 +104,15 @@ foreach((get_the_category()) as $cat) {
 
 
 
-				echo '<div class="modal hide" id="' . $category . '" role="dialog" style="clear:both;">
-						<div class="modal-header">
-							<a href="#" class="btn btn-danger close" data-dismiss="modal">&times;</a>
-							<h3>';
-							the_title();
-					  echo ' <small>posted by ';
-						the_author();
-						echo '</small></h3>
-					  </div>
-					  <div class="modal-body">';
-						the_content();
-				echo'</div>
-				<div class="modal-footer"></div>
-			</div>';
+				echo '<div class="modal fade" id="' . $category . '" role="dialog" style="clear:both;"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h3>';
+				the_title();
+				echo ' <small>posted by ';
+				the_author();
+				echo '</small></h3></div><div class="modal-body">';
+				the_content();
+				echo'</div><div class="modal-footer"></div></div></div></div>';
+
+
 endwhile;?>
 <div class="well layer-options">
 <p><strong>View with Layers</strong></p>
