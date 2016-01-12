@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<div style="display: block; background-image: url(wp-content/themes/american-elections/img/USA-greyscale.png); position: relative; padding: 0px; width: 960px; height: 593px; background-position: initial initial; background-repeat: initial initial; " class="map">
+<div style="display: block; background-image: url(<?php echo get_stylesheet_directory_uri() . '/img/USA-greyscale.png' ?>); position: relative; padding: 0px; width: 960px; height: 593px; background-position: initial initial; background-repeat: initial initial; " class="map">
   <canvas style="width: 960px; height: 593px; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px; opacity: 1; " height="593" width="960"></canvas>
-  <img class="map maphilighted" src="wp-content/themes/american-elections/img/USA-greyscale.png" width="960" height="593" usemap="#usa" style="opacity: 0; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px; "></div>
+  <img class="map maphilighted" src="<?php echo get_stylesheet_directory_uri() . '/img/USA-greyscale.png'; ?>" width="960" height="593" usemap="#usa" style="opacity: 0; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px; "></div>
 <map name="usa">
   <area data-toggle="modal" href="#south-carolina" title="SC" shape="poly" coords="735,418, 734,419, 731,418, 731,416, 729,413, 727,411, 725,410, 723,405, 720,399, 716,398, 714,396, 713,393, 711,391, 709,390, 707,387, 704,385, 699,383, 699,382, 697,379, 696,378, 693,373, 690,373, 686,371, 684,369, 684,368, 685,366, 687,365, 687,363, 693,360, 701,356, 708,355, 724,355, 727,356, 728,360, 732,359, 745,358, 747,358, 760,366, 769,374, 764,379, 762,385, 761,391, 759,392, 758,394, 756,395, 754,398, 751,401, 749,404, 748,405, 744,408, 741,409, 742,412, 737,417, 735,418">
   <area data-toggle="modal" href="#hawaii" title="HI" shape="poly" coords="225,521, 227,518, 229,517, 229,518, 227,521, 225,521">
