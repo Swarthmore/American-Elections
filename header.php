@@ -24,19 +24,9 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<link href="wp-content/themes/american-elections/css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" href="wp-content/themes/american-elections/style.css" type="text/css" media="screen">
-<script src="wp-content/themes/american-elections/js/jquery.min.js"></script>
-<script type="text/javascript" src="wp-content/themes/american-elections/js/jquery.maphilight.js"></script>
-<script src="wp-content/themes/american-elections/js/bootstrap.js"></script>
-<script type="text/javascript">$(function() {
-			$('.map').maphilight();
-		});
-</script>
-
 		<style>
 			body {
-	
+
 				}
 			.modal{
 			/*--	position:absolute;--*/
@@ -46,7 +36,7 @@
 				position:relative;
 				width:94%;
 			}
-			
+
 			</style>
 
 
@@ -92,6 +82,11 @@
 	 */
 	wp_head();
 ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+			jQuery('.map').maphilight();
+		});
+</script>
 </head>
 
 
@@ -102,13 +97,13 @@
 </header>
 <?php
  while ( have_posts() ) : the_post();
- 		
+
 foreach((get_the_category()) as $cat) {
   if (!($cat->slug=='voting-laws') && !($cat->slug=='voter-id-law') && !($cat->slug=='changes') && !($cat->slug=='states-that-pre-register-soon-to-be-voters-in-high-school') && !($cat->slug=='rules-governing-groups-registering-voters') && !($cat->slug=='early-voting') && !($cat->slug=='absentee-voting') && !($cat->slug=='uncategorized')) $category = $cat->slug;
 }
 
-				
-				
+
+
 				echo '<div class="modal hide" id="' . $category . '" role="dialog" style="clear:both;">
 						<div class="modal-header">
 							<a href="#" class="btn btn-danger close" data-dismiss="modal">&times;</a>
@@ -168,107 +163,107 @@ endwhile;?>
 </form>
 </div>
 <script>
-$(".modal").on('show',function() {
-	$("canvas").css("display", "none");
+jQuery(".modal").on('show',function() {
+	jQuery("canvas").css("display", "none");
 });
-$(".modal").on('hidden',function() {
-	$("canvas").css("display", "block");
+jQuery(".modal").on('hidden',function() {
+	jQuery("canvas").css("display", "block");
 });
-$("#no-layer").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "bold");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/USA-greyscale.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/USA-greyscale.png");
+jQuery("#no-layer").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "bold");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/USA-greyscale.png' ?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/USA-greyscale.png' ?>");
 });
-$("#absentee").click(function() {
-	$(".absentee-label").css("font-weight", "bold");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/Map_of_USA_Absentee.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/Map_of_USA_Absentee.png");
+jQuery("#absentee").click(function() {
+	jQuery(".absentee-label").css("font-weight", "bold");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_Absentee.png' ?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_Absentee.png' ?>");
 });
-$("#earlyvoting").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "bold");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/Map_of_USA_EarlyVoting.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/Map_of_USA_EarlyVoting.png");
+jQuery("#earlyvoting").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "bold");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_EarlyVoting.png' ?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_EarlyVoting.png'?>");
 });
-$("#groups").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "bold");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/Map_of_USA_GroupsRegistered.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/Map_of_USA_GroupsRegistered.png");
+jQuery("#groups").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "bold");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_GroupsRegistered.png'?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_GroupsRegistered.png'?>");
 });
-$("#preregister").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "bold");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/Map_of_USA_HighSchool.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/Map_of_USA_HighSchool.png");
+jQuery("#preregister").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "bold");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_HighSchool.png'?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_HighSchool.png'?>");
 });
-$("#voterid").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "bold");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/Map_of_USA_VoterID.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/Map_of_USA_VoterID.png");
+jQuery("#voterid").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "bold");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_VoterID.png'?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/Map_of_USA_VoterID.png'?>");
 });
-$("#swing2008").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "normal");
-	$(".swing2008-label").css("font-weight", "bold");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/USA-2008-swingstates.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/USA-2008-swingstates.png");
+jQuery("#swing2008").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "normal");
+	jQuery(".swing2008-label").css("font-weight", "bold");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/USA-2008-swingstates.png'?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/USA-2008-swingstates.png'?>");
 });
-$("#swing2004").click(function() {
-	$(".absentee-label").css("font-weight", "normal");
-	$(".earlyvoting-label").css("font-weight", "normal");
-	$(".groups-label").css("font-weight", "normal");
-	$(".preregister-label").css("font-weight", "normal");
-	$(".voterid-label").css("font-weight", "normal");
-	$(".swing2004-label").css("font-weight", "bold");
-	$(".swing2008-label").css("font-weight", "normal");
-	$(".no-layer-label").css("font-weight", "normal");
-	$(".map").css("background-image", "url(wp-content/themes/american-elections/img/USA-2004-swingstates.png)");
-	$(".maphilighted").attr("src", "wp-content/themes/american-elections/img/USA-2004-swingstates.png");
+jQuery("#swing2004").click(function() {
+	jQuery(".absentee-label").css("font-weight", "normal");
+	jQuery(".earlyvoting-label").css("font-weight", "normal");
+	jQuery(".groups-label").css("font-weight", "normal");
+	jQuery(".preregister-label").css("font-weight", "normal");
+	jQuery(".voterid-label").css("font-weight", "normal");
+	jQuery(".swing2004-label").css("font-weight", "bold");
+	jQuery(".swing2008-label").css("font-weight", "normal");
+	jQuery(".no-layer-label").css("font-weight", "normal");
+	jQuery(".map").css("background-image", "url(<?php echo get_stylesheet_directory_uri() . '/img/USA-2004-swingstates.png'?>)");
+	jQuery(".maphilighted").attr("src", "<?php echo get_stylesheet_directory_uri() . '/img/USA-2004-swingstates.png'?>");
 });
 </script>
 <div id="main" class="container">
